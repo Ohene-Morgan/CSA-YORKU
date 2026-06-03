@@ -1,3 +1,5 @@
 generate_presentation.py
 CSA_Workshop_Presentation.pptx
 CSA_Presentation_Outline.md
+*.pptx
+*.md

@@ -1,20 +1,34 @@
-# CSA × York University — AI & Data Science for Materials Science Workshop
+# CSA × York University — AI, Data Science & Space Materials Workshop
 
-A hands-on undergraduate workshop developed in collaboration with the **Canadian Space Agency (CSA)** and **York University**. The curriculum teaches Python programming, scientific computing, machine learning, and generative AI — all applied to materials science problems.
+An interdisciplinary workshop developed in collaboration with the **Canadian Space Agency (CSA)** and **York University**, open to undergraduate students across all STEM fields. The program was designed to spark interest in **space engineering**, **materials for space applications**, and **robotics**, while building practical computational skills and fostering cross-disciplinary collaboration.
+
+Led by a computational materials scientist, the workshop brought together students from diverse backgrounds — engineering, physics, chemistry, computer science, and more — to work on real space-relevant problems.
+
+---
+
+## Program Goals
+
+- Ignite student interest in space engineering and materials for extreme space environments
+- Introduce computational tools used in modern materials science and engineering research
+- Enable cross-disciplinary collaboration on space-relevant design challenges
+- Provide grounding in AI and generative design tools with direct application to space hardware
+- Connect students to the kind of work done at CSA and affiliated research institutions
 
 ---
 
 ## Curriculum Overview
 
-The workshop is structured as four progressive tracks culminating in an integrated capstone exercise.
+The workshop covered four computational tracks alongside hands-on technical activities, all framed around space and robotics applications.
 
-| Track | Topics | Tools |
-|-------|--------|-------|
+| Track / Activity | Topics | Tools |
+|------------------|--------|-------|
 | **1 — Python Foundations** | Data types, control flow, OOP, file I/O, debugging | Base Python |
 | **2 — Scientific Computing** | Arrays, DataFrames, materials featurization | NumPy, Pandas, Matminer, Pymatgen |
 | **3 — Machine Learning** | Regression, classification, model evaluation | Scikit-learn |
 | **4 — Generative AI** | Diffusion models, Hugging Face, Gen AI CAD grounding | Hugging Face `diffusers` |
-| **Capstone** | End-to-end materials featurization pipeline | All of the above |
+| **CAD Design** | Computer-aided design fundamentals for space components | CAD software |
+| **Metallography** | Microstructural analysis, material characterisation basics | Lab / optical microscopy |
+| **Capstone Projects** | Student-led research design for space material challenges | All of the above |
 
 **Platform:** Jupyter Notebooks
 **Environments:** Google Colab · Syzygy · Local Conda (see `environment.yml`)
@@ -35,25 +49,24 @@ CSA-YORKU/
 │   └── macine_failure.ipynb               # Track 3 — Decision tree classifier
 │
 ├── Post_installation trial/
-│   └── MSAI_Day1_Exercises.ipynb          # Capstone — integrated Day-1 exercise
+│   └── MSAI_Day1_Exercises.ipynb          # Integrated Day-1 exercise
 │
 ├── Assignments/
 │   └── A1_Python_Basics-1.ipynb           # Assignment 1 (7 tasks)
 │
-├── CSA_Presentation_Outline.md            # Full slide-by-slide presentation outline
 ├── generate_presentation.py               # Script to generate the .pptx deck
-├── CSA_Workshop_Presentation.pptx         # Generated PowerPoint presentation
+├── CSA_Workshop_Presentation.pptx         # Generated PowerPoint presentation (local only)
 └── environment.yml                        # Conda environment specification
 ```
 
-> **Note:** Generative AI / diffusion model materials are not fully uploaded yet.
+> **Note:** Generative AI, CAD design, and metallography materials are not fully uploaded to this repository.
 
 ---
 
 ## Track Details
 
 ### Track 1 — Python Foundations
-Core Python for students with no assumed programming background:
+Core Python from first principles — taught to students with no assumed programming background, across all STEM disciplines:
 - Primitive types, strings, lists, tuples, dictionaries
 - Control flow: conditionals, for/while loops, `range()`
 - Functions with default parameters
@@ -61,14 +74,16 @@ Core Python for students with no assumed programming background:
 - File I/O with the `csv` module
 - Debugging: identifying and fixing syntax and semantic errors
 
+> Python fundamentals occupied a significant portion of the program timeline, as many students were encountering programming for the first time.
+
 ### Track 2 — Scientific Computing
-The bridge between Python and materials science:
+Bridges general programming and scientific data analysis:
 - **NumPy:** array operations, linear algebra (eigenvalues, determinants), reshaping
 - **Pandas:** DataFrames, `iloc`/`loc`, `groupby`, missing-value handling, one-hot encoding
 - **Matminer / Pymatgen:** converting alloy composition strings into numerical features — electronegativity, oxidation states, band center, Mendeleev numbers
 
-### Track 3 — Machine Learning
-Supervised learning on real engineering datasets:
+### Track 3 — Machine Learning for Materials
+Supervised learning applied to real engineering datasets:
 - **Regression:** linear → polynomial (degree 2 & 3) on rotational speed vs. torque data; R², MSE
 - **Classification:** Decision Tree on the AI4I2020 industrial machine failure dataset (10,000 samples); confusion matrix, classification report
 - Key concept: polynomial regression as linear regression on transformed features
@@ -78,22 +93,49 @@ Conceptual grounding for Generative AI CAD Design:
 - Generative vs. discriminative models — what it means for a model to *create* rather than predict
 - Diffusion model fundamentals: forward diffusion (noise addition) and reverse diffusion (learned denoising)
 - **Hugging Face `diffusers`:** running pre-trained diffusion models with minimal code
-- Hands-on exploration of model outputs; critical evaluation of generated results
-- Foundation for applying generative AI to engineering design workflows
+- Foundation for applying generative AI to engineering design and space component workflows
 
-### Capstone — Day-1 Integrated Exercise
-Students build a materials informatics pipeline from scratch:
-1. Parse alloy composition strings (e.g., `Al50Cu50`, `Fe40Ni40Cr20`)
-2. Compute physics-grounded features: weighted mean electronegativity, weighted variance, weighted atomic mass, Mendeleev number
-3. Visualise the feature space of binary and ternary alloys
-4. Train a linear regression model on hand-crafted features
-5. (Stretch) Extend with Matminer's production-grade featurizers
+### CAD Design
+Introduction to computer-aided design in the context of space components and materials:
+- Design fundamentals for engineering parts
+- Connection to generative AI design tools
+- Application to the capstone project challenges
+
+### Metallography
+Hands-on materials characterisation:
+- Microstructural analysis of engineering alloys
+- Optical microscopy and sample preparation basics
+- Interpreting microstructure in the context of material properties
+
+---
+
+## Capstone Projects
+
+Students worked in interdisciplinary teams on two open-ended, space-relevant design challenges. The projects were framed as research design exercises — students were tasked with defining their own objectives and goals rather than following a prescribed procedure.
+
+### Project 1 — Thermal Protection System (TPS)
+**Challenge:** Design a research plan for a material capable of withstanding extreme thermal conditions encountered in space applications (e.g., atmospheric re-entry, proximity to propulsion systems).
+
+Students were asked to:
+- Identify target thermal performance requirements
+- Propose candidate material classes and justify their selection
+- Outline a computational and/or experimental characterisation strategy
+
+### Project 2 — Advanced Materials for Robotics
+**Challenge:** Identify and characterise materials for robotic components designed to operate in extreme space environments under high-impact mechanical loading.
+
+Students were asked to:
+- Define mechanical performance targets for robotic parts
+- Research candidate materials balancing weight, toughness, and environmental resistance
+- Connect material selection to computational screening approaches covered in the workshop
+
+> Both projects were not fully completed within the workshop timeline and represent directions for future iterations of the program.
 
 ---
 
 ## Assignment 1
 
-Seven tasks designed to reinforce every track concept and test genuine understanding:
+Seven tasks designed to reinforce every track concept across students from any STEM background:
 
 | Task | Concept |
 |------|---------|
@@ -128,10 +170,9 @@ Log in at [syzygy.ca](https://syzygy.ca) and upload the notebook.
 
 A CSA-facing curriculum design report is included:
 
-- `CSA_Presentation_Outline.md` — full slide-by-slide content and speaker notes
 - `CSA_Workshop_Presentation.pptx` — 16-slide PowerPoint deck (regenerate with `python generate_presentation.py`)
 
-The presentation covers not just *what* was taught but the pedagogical rationale behind each design decision.
+The presentation covers the pedagogical rationale behind the curriculum, the two capstone projects, and the relevance of the program to CSA's mission in space materials and engineering.
 
 ---
 
